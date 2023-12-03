@@ -18,9 +18,18 @@ def doublelist_displayer(input_list):
             print(j,end=" ")
         print()
 
+
 notarranged_numlist=num_gen()
 numlist=num_arrange(notarranged_numlist)
 player_list=[["x"]*6]*3
 
-doublelist_displayer(numlist)
-doublelist_displayer(player_list)
+# doublelist_displayer(numlist)
+# doublelist_displayer(player_list)
+
+i=0
+while (True):
+    doublelist_displayer(player_list)
+    print()
+    i=i+1
+    print("<시도 {}, 남은 카드: {}> 좌표를 두 번 입력하세요".format(i,player_list.count("x")))
+    break
