@@ -19,10 +19,6 @@ def doublelist_displayer(input_list):
             print(j,end=" ")
         print()
 
-
-
-
-
 def x_counter(input_list):
     count=0
     for i in input_list:
@@ -66,5 +62,5 @@ while (finish_teller(numlist) !=True):
     finish_teller(numlist)
     print("---------------------------")
 
-
+print("축하합니다. 모든 카드를 맞추셨습니다!")
 
