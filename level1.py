@@ -46,6 +46,11 @@ while (finish_teller(numlist) !=True):
     input1=[int(input1[0])-1,int(input1[1])-1]
     input2=input("입력 2? ").strip("()").split(",")
     input2=[int(input2[0])-1,int(input2[1])-1]
+    if input1==input2:
+        raise Exception("서로 다른 카드를 뽑으십시오")
+    if numlist[input1[0]][input1[1]]==" " or numlist[input2[0]][input2[1]]==" ":
+        raise Exception("존재하지 않는 카드입니다")
+   
 
     # print(displayed_list)
     displayed_list[input1[0]][input1[1]]=numlist[input1[0]][input1[1]]

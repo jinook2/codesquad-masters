@@ -91,10 +91,3 @@ elif(player_score[0]>player_score[1]):
 elif(player_score[0]<player_score[1]):
     print("{}승리".format(players[1]))
 
-# 4 7 5 2 6 1 
-# 3 2 7 5 8 3 
-# 4 8 1 5 6 3 
-
-# o o o o o o
-# o o o o 8 o
-# o 8 o 5 o 3 
