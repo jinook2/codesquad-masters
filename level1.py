@@ -33,8 +33,14 @@ def x_counter(input_list):
         count=count+i.count("x")
     return count
 
+def finish_teller(input_list):
+    input_list=[i for j in input_list for i in j]
+    while (" " in input_list):
+        input_list.remove(" ")
+    return len(input_list)==len(set(input_list))
+
 i=0
-while (True):
+while (finish_teller(numlist) !=True):
     displayed_list=copy.deepcopy(player_list)
     doublelist_displayer(displayed_list)
     print()
@@ -50,8 +56,15 @@ while (True):
     displayed_list[input2[0]][input2[1]]=numlist[input2[0]][input2[1]]
     # print(displayed_list)
     doublelist_displayer(displayed_list)
+    
     if (numlist[input1[0]][input1[1]]==numlist[input2[0]][input2[1]]):
         player_list[input1[0]][input1[1]]=" "
         player_list[input2[0]][input2[1]]=" "
+        numlist[input1[0]][input1[1]]=" "
+        numlist[input2[0]][input2[1]]=" "        
+
+    finish_teller(numlist)
     print("---------------------------")
+
+
 
