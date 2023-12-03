@@ -1,4 +1,5 @@
 import random
+import copy
 
 def num_gen():
     numbers = list(range(1, 9))*3
@@ -21,15 +22,36 @@ def doublelist_displayer(input_list):
 
 notarranged_numlist=num_gen()
 numlist=num_arrange(notarranged_numlist)
-player_list=[["x"]*6]*3
+player_list=[["x"]*6,["x"]*6,["x"]*6]
 
-# doublelist_displayer(numlist)
+doublelist_displayer(numlist)
 # doublelist_displayer(player_list)
+
+def x_counter(input_list):
+    count=0
+    for i in input_list:
+        count=count+i.count("x")
+    return count
 
 i=0
 while (True):
-    doublelist_displayer(player_list)
+    displayed_list=copy.deepcopy(player_list)
+    doublelist_displayer(displayed_list)
     print()
     i=i+1
-    print("<시도 {}, 남은 카드: {}> 좌표를 두 번 입력하세요".format(i,player_list.count("x")))
-    break
+    print("<시도 {}, 남은 카드: {}> 좌표를 두 번 입력하세요".format(i,x_counter(player_list)))
+    input1=input("입력 1? ").strip("()").split(",")
+    input1=[int(input1[0])-1,int(input1[1])-1]
+    input2=input("입력 2? ").strip("()").split(",")
+    input2=[int(input2[0])-1,int(input2[1])-1]
+
+    # print(displayed_list)
+    displayed_list[input1[0]][input1[1]]=numlist[input1[0]][input1[1]]
+    displayed_list[input2[0]][input2[1]]=numlist[input2[0]][input2[1]]
+    # print(displayed_list)
+    doublelist_displayer(displayed_list)
+    if (numlist[input1[0]][input1[1]]==numlist[input2[0]][input2[1]]):
+        player_list[input1[0]][input1[1]]=" "
+        player_list[input2[0]][input2[1]]=" "
+    print("---------------------------")
+
