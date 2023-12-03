@@ -31,6 +31,15 @@ def finish_teller(input_list):
         input_list.remove(" ")
     return len(input_list)==len(set(input_list))
 
+def result():
+    print("게임 종료! {}:{}점, {}:{}점".format(player1,player_score[0],player2,player_score[1]))
+    if (player_score[0]==player_score[1]):
+        print("무승부!")
+    elif(player_score[0]>player_score[1]):
+        print("{}승리".format(players[0]))
+    elif(player_score[0]<player_score[1]):
+        print("{}승리".format(players[1]))
+
 player1=input("1P의 이름을 입력하세요")
 player2=input("2P의 이름을 입력하세요")
 players=[player1,player2]
@@ -62,10 +71,8 @@ while (finish_teller(numlist) !=True):
     if numlist[input1[0]][input1[1]]==" " or numlist[input2[0]][input2[1]]==" ":
         raise Exception("존재하지 않는 카드입니다")
 
-    # print(displayed_list)
     displayed_list[input1[0]][input1[1]]=numlist[input1[0]][input1[1]]
     displayed_list[input2[0]][input2[1]]=numlist[input2[0]][input2[1]]
-    # print(displayed_list)
     doublelist_displayer(displayed_list)
 
     if (numlist[input1[0]][input1[1]]==numlist[input2[0]][input2[1]]):
@@ -83,11 +90,8 @@ while (finish_teller(numlist) !=True):
     finish_teller(numlist)
     print("---------------------------")
 
-print("게임 종료! {}:{}점, {}:{}점".format(player1,player_score[0],player2,player_score[1]))
-if (player_score[0]==player_score[1]):
-    print("무승부!")
-elif(player_score[0]>player_score[1]):
-    print("{}승리".format(players[0]))
-elif(player_score[0]<player_score[1]):
-    print("{}승리".format(players[1]))
+result()
 
+# 8 5 1 7 4 7 
+# 5 7 3 6 3 4 
+# 5 4 8 3 6 2 
