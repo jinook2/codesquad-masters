@@ -20,12 +20,8 @@ def doublelist_displayer(input_list):
         print()
 
 
-notarranged_numlist=num_gen()
-numlist=num_arrange(notarranged_numlist)
-player_list=[["x"]*6,["x"]*6,["x"]*6]
 
-doublelist_displayer(numlist)
-# doublelist_displayer(player_list)
+
 
 def x_counter(input_list):
     count=0
@@ -38,6 +34,10 @@ def finish_teller(input_list):
     while (" " in input_list):
         input_list.remove(" ")
     return len(input_list)==len(set(input_list))
+
+notarranged_numlist=num_gen()
+numlist=num_arrange(notarranged_numlist)
+player_list=[["x"]*6,["x"]*6,["x"]*6]
 
 i=0
 while (finish_teller(numlist) !=True):
@@ -56,7 +56,7 @@ while (finish_teller(numlist) !=True):
     displayed_list[input2[0]][input2[1]]=numlist[input2[0]][input2[1]]
     # print(displayed_list)
     doublelist_displayer(displayed_list)
-    
+
     if (numlist[input1[0]][input1[1]]==numlist[input2[0]][input2[1]]):
         player_list[input1[0]][input1[1]]=" "
         player_list[input2[0]][input2[1]]=" "
