@@ -62,7 +62,7 @@ while (finish_teller(numlist) !=True):
         player_list[input1[0]][input1[1]]=" "
         player_list[input2[0]][input2[1]]=" "
         numlist[input1[0]][input1[1]]=" "
-        numlist[input2[0]][input2[1]]=" "        
+        numlist[input2[0]][input2[1]]=" "
 
     finish_teller(numlist)
     print("---------------------------")

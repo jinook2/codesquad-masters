@@ -52,16 +52,16 @@ player_list=[["x"]*6,["x"]*6,["x"]*6]
 player_index=0
 player_score=[0,0]
 
-i=0
+
 combo=0
 while (finish_teller(numlist) !=True):
-    i=i+1
+
     displayed_list=copy.deepcopy(player_list)
     doublelist_displayer(displayed_list)
     print()
     player=players[player_index]
     print("{} 차례, combo:{}, score:{}".format(player,combo,player_score[player_index]))
-    print("<시도 {}, 남은 카드: {}> 좌표를 두 번 입력하세요".format(i,x_counter(player_list)))
+
     input1=input("입력 1? ").strip("()").split(",")
     input1=[int(input1[0])-1,int(input1[1])-1]
     input2=input("입력 2? ").strip("()").split(",")
@@ -92,6 +92,3 @@ while (finish_teller(numlist) !=True):
 
 result()
 
-# 8 5 1 7 4 7 
-# 5 7 3 6 3 4 
-# 5 4 8 3 6 2 
